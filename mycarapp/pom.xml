@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -18,20 +17,31 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
-
-  <dependencies>
-    <dependency>
+ </dependencies>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
-    </dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-core</artifactId>
-		<version>5.3.23</version>
   </dependencies>
 
-  <build>
+
+  <distributionManagement>  
+	<repository>
+		<id>nexus</id>
+		<name>mycarapp-release</name>
+		<url>http://18.233.99.188:8081/repository/mycarapp-release/</url>
+	</repository>
+	
+	<snapshotRepository>
+		<id>nexus</id>
+		<name>mycarapp-snapshot</name>
+		<url>http://18.233.99.188:8081/repository/mycarapp-snapshot/</url>
+	</snapshotRepository>	
+  </distributionManagement>
+
+
+
+    <build>
     <finalName>mycarapp</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
